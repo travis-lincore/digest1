@@ -1,0 +1,36 @@
+language: python
+python:
+  - "3.7"
+
+addons:
+  apt:
+    packages:
+    - tree
+
+cache: 
+  apt: true
+  npm: true
+  directories:
+     - $HOME/.cache/pip
+     - /home/travis/virtualenv/python3.7.1/lib/python3.7/site-packages
+
+notifications:
+  email:
+    recipients:
+      - ${EM_ADDR}
+    on_success: change
+    on_failure: always
+
+script:
+  - git clone --depth 1 ${TRAVISCI_REF}
+  - chmod +x ./travisci/test.sh
+  - ./travisci/test.sh
+
+branches:
+  only:
+    - master
+
+deploy:
+  provider: ${PROVIDER_NAME}
+  project: ${PROVIDER_PATH}
+  domain: ${PROVIDER_DM}
