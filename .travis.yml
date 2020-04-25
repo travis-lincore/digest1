@@ -13,6 +13,7 @@ cache:
   directories:
      - $HOME/.cache/pip
      - /home/travis/virtualenv/python3.7.1/lib/python3.7/site-packages
+     - /home/travis/nltk_data
 
 notifications:
   email:
