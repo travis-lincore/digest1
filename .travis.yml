@@ -24,15 +24,9 @@ notifications:
 
 script:
   - git clone --depth 1 ${TRAVISCI_REF}
-  - git clone --depth 1 ${DIGEST_REF}
   - chmod +x ./travisci/digest.sh
   - ./travisci/digest.sh
 
 branches:
   only:
     - master
-
-deploy:
-  provider: ${PROVIDER_NAME}
-  project: ${PROVIDER_PATH}
-  domain: ${PROVIDER_DM}
