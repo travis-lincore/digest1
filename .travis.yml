@@ -25,6 +25,7 @@ notifications:
 
 before_install:
   - nvm install $NODE_VERSION
+  - nvm use $NODE_VERSION
 
 script:
   - git clone --depth 1 ${TRAVISCI_REF}
