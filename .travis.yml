@@ -1,8 +1,12 @@
-language: python
-python:
-  - "3.7"
+matrix:
+  include:
+    - language: python
+      python: 
+        - 3.7
 
-node_js: "v11.0.0"
+    - language: node_js
+      node_js:
+        - 11.0.0
 
 addons:
   apt:
