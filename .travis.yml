@@ -9,12 +9,10 @@ addons:
 
 cache: 
   apt: true
-  npm: true
   directories:
      - $HOME/.cache/pip
      - /home/travis/virtualenv/python3.7.1/lib/python3.7/site-packages
      - /home/travis/nltk_data
-     - .next/cache
 
 notifications:
   email:
